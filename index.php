@@ -1,8 +1,6 @@
 ﻿<?php
 	session_start();
 ?>
-
-# This a comment!
 <!DOCTYPE html>
 <html>
 <head>

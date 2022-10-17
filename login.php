@@ -71,7 +71,7 @@
   </div>
 </section>
   <?php
-  $connect= mysqli_connect('localhost','root','','musicwebsite');
+  $connect= mysqli_connect('3.132.234.157','hduc2502','123@123a','musicwebsite');
 if(isset($_POST['login'])){
 $username = $_POST['username'];
 $password = $_POST['password'];

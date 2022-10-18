@@ -10,7 +10,7 @@
 </head>
 <body>
   <?php
-  $connect= mysqli_connect('localhost','root','','musicwebsite');
+  $connect= mysqli_connect('3.132.234.157','hduc2502','123@123a','musicwebsite');
   ?>
     <!-- Section: Design Block -->
 <section class="text-center text-lg-start">

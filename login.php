@@ -90,7 +90,7 @@ if($num_rows ==0){
     $_SESSION['user_id'] = $user['user_id'];
   }
   echo "<script> alert('Login success')</script>";
-    echo"<script>window.open('menu.php','_self')</script>";
+    echo"<script>window.open('menu.php')</script>";
             }
 }
 ?>

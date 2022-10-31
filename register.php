@@ -120,7 +120,7 @@ if(isset($_POST['register'])){
 	if($result){
 		?> <script>
         alert("register successful");
-        window.location.href = "log.php";
+        window.location.href = "login.php";
     </script>
     <?php
 	}else{

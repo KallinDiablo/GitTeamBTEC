@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th10 10, 2022 lúc 01:21 PM
+-- Thời gian đã tạo: Th10 09, 2022 lúc 09:45 AM
 -- Phiên bản máy phục vụ: 10.4.24-MariaDB
 -- Phiên bản PHP: 8.1.6
 
@@ -47,6 +47,27 @@ CREATE TABLE `category` (
   `CategoryDescription` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Đang đổ dữ liệu cho bảng `category`
+--
+
+INSERT INTO `category` (`CategoryID`, `CategoryName`, `CategoryDescription`) VALUES
+(3, 'lego', 'lego'),
+(6, 'vehicle', 'vehicle'),
+(7, 'animal', 'animal');
+
+-- --------------------------------------------------------
+
+--
+-- Cấu trúc bảng cho bảng `category_product`
+--
+
+CREATE TABLE `category_product` (
+  `cpId` int(10) UNSIGNED NOT NULL,
+  `product_pID` int(11) NOT NULL,
+  `category_CategoryID` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
 -- --------------------------------------------------------
 
 --
@@ -58,6 +79,208 @@ CREATE TABLE `country` (
   `cName` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Đang đổ dữ liệu cho bảng `country`
+--
+
+INSERT INTO `country` (`cID`, `cName`) VALUES
+(1, 'Afghanistan'),
+(2, 'Albania'),
+(3, 'Algeria'),
+(4, 'Andorra'),
+(5, 'Angola'),
+(6, 'Antigua and Barbuda'),
+(7, 'Argentina'),
+(8, 'Armenia'),
+(9, 'Australia'),
+(10, 'Austria'),
+(11, 'Azerbaijan'),
+(13, 'Bahrain'),
+(14, 'Bangladesh'),
+(15, 'Barbados'),
+(16, 'Belarus'),
+(17, 'Belgium'),
+(18, 'Belize'),
+(19, 'Benin'),
+(20, 'Bhutan'),
+(21, 'Bolivia'),
+(22, 'Bosnia and Herzegovina'),
+(23, 'Botswana'),
+(24, 'Brazil'),
+(25, 'Brunei'),
+(26, 'Bulgaria'),
+(27, 'Burkina Faso'),
+(28, 'Burundi'),
+(29, 'Cabo Verde'),
+(30, 'Cambodia'),
+(31, 'Cameroon'),
+(32, 'Canada'),
+(33, 'Central African Republic'),
+(34, 'Chad'),
+(35, 'Chile'),
+(36, 'China'),
+(37, 'Colombia'),
+(38, 'Comoros'),
+(39, 'Congo, Democratic Republic of the'),
+(40, 'Congo, Republic of the'),
+(41, 'Costa Rica'),
+(42, 'Côte d’Ivoire'),
+(43, 'Croatia'),
+(44, 'Cuba'),
+(45, 'Cyprus'),
+(46, 'Czech Republic'),
+(47, 'Denmark'),
+(48, 'Djibouti'),
+(49, 'Dominica'),
+(50, 'Dominican Republic'),
+(51, 'East Timor '),
+(52, 'Ecuador'),
+(53, 'Egypt'),
+(54, 'El Salvador'),
+(55, 'Equatorial Guinea'),
+(56, 'Eritrea'),
+(57, 'Estonia'),
+(58, 'Eswatini'),
+(59, 'Ethiopia'),
+(60, 'Fiji'),
+(61, 'Finland'),
+(62, 'France'),
+(63, 'Gabon'),
+(65, 'Georgia'),
+(66, 'Germany'),
+(67, 'Ghana'),
+(68, 'Greece'),
+(69, 'Grenada'),
+(70, 'Guatemala'),
+(71, 'Guinea'),
+(72, 'Guinea-Bissau'),
+(73, 'Guyana'),
+(74, 'Haiti'),
+(75, 'Honduras'),
+(76, 'Hungary'),
+(77, 'Iceland'),
+(78, 'India'),
+(79, 'Indonesia'),
+(80, 'Iran'),
+(81, 'Iraq'),
+(82, 'Ireland'),
+(83, 'Israel'),
+(84, 'Italy'),
+(85, 'Jamaica'),
+(86, 'Japan'),
+(87, 'Jordan'),
+(88, 'Kazakhstan'),
+(89, 'Kenya'),
+(90, 'Kiribati'),
+(91, 'Korea, North'),
+(92, 'Korea, South'),
+(93, 'Kosovo'),
+(94, 'Kuwait'),
+(95, 'Kyrgyzstan'),
+(96, 'Laos'),
+(97, 'Latvia'),
+(98, 'Lebanon'),
+(99, 'Lesotho'),
+(100, 'Liberia'),
+(101, 'Libya'),
+(102, 'Liechtenstein'),
+(103, 'Lithuania'),
+(104, 'Luxembourg'),
+(105, 'Madagascar'),
+(106, 'Malawi'),
+(107, 'Malaysia'),
+(108, 'Maldives'),
+(109, 'Mali'),
+(110, 'Malta'),
+(111, 'Marshall Islands'),
+(112, 'Mauritania'),
+(113, 'Mauritius'),
+(114, 'Mexico'),
+(115, 'Micronesia, Federated States of'),
+(116, 'Moldova'),
+(117, 'Monaco'),
+(118, 'Mongolia'),
+(119, 'Montenegro'),
+(120, 'Morocco'),
+(121, 'Mozambique'),
+(122, 'Myanmar'),
+(123, 'Namibia'),
+(124, 'Nauru'),
+(125, 'Nepal'),
+(126, 'Netherlands'),
+(127, 'New Zealand'),
+(128, 'Nicaragua'),
+(129, 'Niger'),
+(130, 'Nigeria'),
+(131, 'North Macedonia'),
+(132, 'Norway'),
+(133, 'Oman'),
+(134, 'Pakistan'),
+(135, 'Palau'),
+(136, 'Panama'),
+(137, 'Papua New Guinea'),
+(138, 'Paraguay'),
+(139, 'Peru'),
+(140, 'Philippines'),
+(141, 'Poland'),
+(142, 'Portugal'),
+(143, 'Qatar'),
+(144, 'Romania'),
+(145, 'Russia'),
+(146, 'Rwanda'),
+(147, 'Saint Kitts and Nevis'),
+(148, 'Saint Lucia'),
+(149, 'Saint Vincent and the Grenadines'),
+(150, 'Samoa'),
+(151, 'San Marino'),
+(152, 'Sao Tome and Principe'),
+(153, 'Saudi Arabia'),
+(154, 'Senegal'),
+(155, 'Serbia'),
+(156, 'Seychelles'),
+(157, 'Sierra Leone'),
+(158, 'Singapore'),
+(159, 'Slovakia'),
+(160, 'Slovenia'),
+(161, 'Solomon Islands'),
+(162, 'Somalia'),
+(163, 'South Africa'),
+(164, 'Spain'),
+(165, 'Sri Lanka'),
+(166, 'Sudan'),
+(167, 'Sudan, South'),
+(168, 'Suriname'),
+(169, 'Sweden'),
+(170, 'Switzerland'),
+(171, 'Syria'),
+(172, 'Taiwan'),
+(173, 'Tajikistan'),
+(174, 'Tanzania'),
+(175, 'Thailand'),
+(12, 'The Bahamas'),
+(64, 'The Gambia'),
+(176, 'Togo'),
+(177, 'Tonga'),
+(178, 'Trinidad and Tobago'),
+(179, 'Tunisia'),
+(180, 'Turkey'),
+(181, 'Turkmenistan'),
+(182, 'Tuvalu'),
+(183, 'Uganda'),
+(184, 'Ukraine'),
+(185, 'United Arab Emirates'),
+(186, 'United Kingdom'),
+(187, 'United States'),
+(188, 'Uruguay'),
+(189, 'Uzbekistan'),
+(190, 'Vanuatu'),
+(191, 'Vatican City'),
+(192, 'Venezuela'),
+(193, 'Vietnam'),
+(194, 'Yemen'),
+(195, 'Zambia'),
+(196, 'Zimbabwe');
+
 -- --------------------------------------------------------
 
 --
@@ -67,6 +290,7 @@ CREATE TABLE `country` (
 CREATE TABLE `detail` (
   `dID` int(11) NOT NULL,
   `rID` int(11) NOT NULL,
+  `pID` int(11) NOT NULL,
   `dQuantity` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -790,6 +1014,44 @@ INSERT INTO `district` (`districtid`, `name`, `type`, `location`, `provinceid`) 
 -- --------------------------------------------------------
 
 --
+-- Cấu trúc bảng cho bảng `migrations`
+--
+
+CREATE TABLE `migrations` (
+  `id` int(10) UNSIGNED NOT NULL,
+  `migration` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `batch` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Đang đổ dữ liệu cho bảng `migrations`
+--
+
+INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
+(1, '2019_12_14_000001_create_personal_access_tokens_table', 1),
+(4, '2022_10_25_005322_create_productcategory', 2);
+
+-- --------------------------------------------------------
+
+--
+-- Cấu trúc bảng cho bảng `personal_access_tokens`
+--
+
+CREATE TABLE `personal_access_tokens` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `tokenable_type` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `tokenable_id` bigint(20) UNSIGNED NOT NULL,
+  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `token` varchar(64) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `abilities` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `last_used_at` timestamp NULL DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
 -- Cấu trúc bảng cho bảng `product`
 --
 
@@ -801,18 +1063,9 @@ CREATE TABLE `product` (
   `pImage2` char(100) NOT NULL,
   `pPrice` double(16,2) NOT NULL,
   `pQuantity` int(11) NOT NULL,
-  `cID` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
--- --------------------------------------------------------
-
---
--- Cấu trúc bảng cho bảng `productcategory`
---
-
-CREATE TABLE `productcategory` (
-  `pID` int(11) NOT NULL,
-  `CategoryID` int(11) NOT NULL
+  `cID` int(11) NOT NULL,
+  `update_at` timestamp NULL DEFAULT NULL,
+  `create_at` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -904,9 +1157,21 @@ INSERT INTO `province` (`provinceid`, `name`, `type`) VALUES
 
 CREATE TABLE `receipt` (
   `rID` int(11) NOT NULL,
-  `pID` int(11) NOT NULL,
   `uID` int(11) NOT NULL,
-  `rTotalPrice` int(11) NOT NULL
+  `rTotalPrice` int(11) NOT NULL,
+  `update_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  `create_at` timestamp NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Cấu trúc bảng cho bảng `roles`
+--
+
+CREATE TABLE `roles` (
+  `roleId` int(11) NOT NULL,
+  `roleName` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -922,10 +1187,9 @@ CREATE TABLE `users` (
   `uPassword` varchar(100) NOT NULL,
   `uEmail` varchar(100) NOT NULL,
   `uImage` char(100) DEFAULT NULL,
-  `Admin` bit(1) DEFAULT NULL,
-  `User` bit(1) DEFAULT NULL,
   `uPhoneNumber` double(12,0) UNSIGNED ZEROFILL NOT NULL DEFAULT 000000000000,
-  `addressid` int(11) NOT NULL
+  `addressid` int(11) NOT NULL,
+  `roleId` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -2540,6 +2804,14 @@ ALTER TABLE `category`
   ADD UNIQUE KEY `CategoryName` (`CategoryName`);
 
 --
+-- Chỉ mục cho bảng `category_product`
+--
+ALTER TABLE `category_product`
+  ADD PRIMARY KEY (`cpId`),
+  ADD KEY `category_product_product_pid_foreign` (`product_pID`),
+  ADD KEY `category_product_category_categoryid_foreign` (`category_CategoryID`);
+
+--
 -- Chỉ mục cho bảng `country`
 --
 ALTER TABLE `country`
@@ -2551,7 +2823,8 @@ ALTER TABLE `country`
 --
 ALTER TABLE `detail`
   ADD PRIMARY KEY (`dID`),
-  ADD KEY `FK_Detail` (`rID`);
+  ADD KEY `FK_Detail` (`rID`),
+  ADD KEY `FK_Detail_Product` (`pID`);
 
 --
 -- Chỉ mục cho bảng `district`
@@ -2561,18 +2834,25 @@ ALTER TABLE `district`
   ADD KEY `provinceid` (`provinceid`);
 
 --
+-- Chỉ mục cho bảng `migrations`
+--
+ALTER TABLE `migrations`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Chỉ mục cho bảng `personal_access_tokens`
+--
+ALTER TABLE `personal_access_tokens`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `personal_access_tokens_token_unique` (`token`),
+  ADD KEY `personal_access_tokens_tokenable_type_tokenable_id_index` (`tokenable_type`,`tokenable_id`);
+
+--
 -- Chỉ mục cho bảng `product`
 --
 ALTER TABLE `product`
   ADD PRIMARY KEY (`pID`),
   ADD KEY `FK_Origin` (`cID`);
-
---
--- Chỉ mục cho bảng `productcategory`
---
-ALTER TABLE `productcategory`
-  ADD PRIMARY KEY (`pID`,`CategoryID`),
-  ADD KEY `FK_Category2` (`CategoryID`);
 
 --
 -- Chỉ mục cho bảng `province`
@@ -2585,8 +2865,14 @@ ALTER TABLE `province`
 --
 ALTER TABLE `receipt`
   ADD PRIMARY KEY (`rID`),
-  ADD KEY `FK_Receipt_1` (`pID`),
   ADD KEY `FK_Receipt_2` (`uID`);
+
+--
+-- Chỉ mục cho bảng `roles`
+--
+ALTER TABLE `roles`
+  ADD PRIMARY KEY (`roleId`),
+  ADD UNIQUE KEY `roleName` (`roleName`);
 
 --
 -- Chỉ mục cho bảng `users`
@@ -2596,7 +2882,8 @@ ALTER TABLE `users`
   ADD UNIQUE KEY `uUsername` (`uUsername`),
   ADD UNIQUE KEY `uEmail` (`uEmail`),
   ADD UNIQUE KEY `uPhoneNumber` (`uPhoneNumber`),
-  ADD KEY `FK_Address` (`addressid`);
+  ADD KEY `FK_Address` (`addressid`),
+  ADD KEY `FK_User_Role` (`roleId`);
 
 --
 -- Chỉ mục cho bảng `ward`
@@ -2619,13 +2906,19 @@ ALTER TABLE `address`
 -- AUTO_INCREMENT cho bảng `category`
 --
 ALTER TABLE `category`
-  MODIFY `CategoryID` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `CategoryID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+
+--
+-- AUTO_INCREMENT cho bảng `category_product`
+--
+ALTER TABLE `category_product`
+  MODIFY `cpId` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT cho bảng `country`
 --
 ALTER TABLE `country`
-  MODIFY `cID` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `cID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=197;
 
 --
 -- AUTO_INCREMENT cho bảng `detail`
@@ -2634,16 +2927,34 @@ ALTER TABLE `detail`
   MODIFY `dID` int(11) NOT NULL AUTO_INCREMENT;
 
 --
+-- AUTO_INCREMENT cho bảng `migrations`
+--
+ALTER TABLE `migrations`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
+-- AUTO_INCREMENT cho bảng `personal_access_tokens`
+--
+ALTER TABLE `personal_access_tokens`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT cho bảng `product`
 --
 ALTER TABLE `product`
-  MODIFY `pID` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `pID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=100;
 
 --
 -- AUTO_INCREMENT cho bảng `receipt`
 --
 ALTER TABLE `receipt`
   MODIFY `rID` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT cho bảng `roles`
+--
+ALTER TABLE `roles`
+  MODIFY `roleId` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT cho bảng `users`
@@ -2664,10 +2975,18 @@ ALTER TABLE `address`
   ADD CONSTRAINT `address_ibfk_3` FOREIGN KEY (`wardid`) REFERENCES `ward` (`wardid`);
 
 --
+-- Các ràng buộc cho bảng `category_product`
+--
+ALTER TABLE `category_product`
+  ADD CONSTRAINT `category_product_category_categoryid_foreign` FOREIGN KEY (`category_CategoryID`) REFERENCES `category` (`CategoryID`),
+  ADD CONSTRAINT `category_product_product_pid_foreign` FOREIGN KEY (`product_pID`) REFERENCES `product` (`pID`);
+
+--
 -- Các ràng buộc cho bảng `detail`
 --
 ALTER TABLE `detail`
-  ADD CONSTRAINT `FK_Detail` FOREIGN KEY (`rID`) REFERENCES `receipt` (`rID`);
+  ADD CONSTRAINT `FK_Detail` FOREIGN KEY (`rID`) REFERENCES `receipt` (`rID`),
+  ADD CONSTRAINT `FK_Detail_Product` FOREIGN KEY (`pID`) REFERENCES `product` (`pID`);
 
 --
 -- Các ràng buộc cho bảng `district`
@@ -2682,24 +3001,17 @@ ALTER TABLE `product`
   ADD CONSTRAINT `FK_Origin` FOREIGN KEY (`cID`) REFERENCES `country` (`cID`);
 
 --
--- Các ràng buộc cho bảng `productcategory`
---
-ALTER TABLE `productcategory`
-  ADD CONSTRAINT `FK_Category1` FOREIGN KEY (`pID`) REFERENCES `product` (`pID`),
-  ADD CONSTRAINT `FK_Category2` FOREIGN KEY (`CategoryID`) REFERENCES `category` (`CategoryID`);
-
---
 -- Các ràng buộc cho bảng `receipt`
 --
 ALTER TABLE `receipt`
-  ADD CONSTRAINT `FK_Receipt_1` FOREIGN KEY (`pID`) REFERENCES `product` (`pID`),
   ADD CONSTRAINT `FK_Receipt_2` FOREIGN KEY (`uID`) REFERENCES `users` (`uID`);
 
 --
 -- Các ràng buộc cho bảng `users`
 --
 ALTER TABLE `users`
-  ADD CONSTRAINT `FK_Address` FOREIGN KEY (`addressid`) REFERENCES `address` (`addressid`);
+  ADD CONSTRAINT `FK_Address` FOREIGN KEY (`addressid`) REFERENCES `address` (`addressid`),
+  ADD CONSTRAINT `FK_User_Role` FOREIGN KEY (`roleId`) REFERENCES `roles` (`roleId`);
 
 --
 -- Các ràng buộc cho bảng `ward`

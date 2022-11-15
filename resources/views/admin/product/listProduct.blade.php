@@ -10,8 +10,12 @@
                   <th>STT</th>
 
                   <th>Name</th>
+                  
+                  <th>Image</th>
 
                   <th>Description</th>
+
+                  <th>Status</th>
 
                   <th width="280px">Action</th>
 
@@ -24,13 +28,22 @@
 
                   <td>{{ $key+1 }}</td>
 
-                  <td>{{ $value->pName }}</td>
+                  <td>{{ $value->pName}}</td>
+
+                  <td><img src="storage/products/{{$value->pImage1}}" class="img-thumbnail" alt=""></td>
 
                   <td>{{ $value->pDescription}}</td>
 
+                  <td>@if($value->update_at == null)
+                        <p>Updated at: null</p>
+                        @else
+                        <p>Updated at: {{ $value->update_at}}</p>
+                        @endif
+                        <p>Created at: {{ $value->create_at}}</p>
+                  </td>
                   <td>
 
-                        <a href="{{asset('product/edit/'.$value->pID)}}" class="btn btn-primary edit"><span class="glyphicon glyphicon-edit"> </span> Edit</a>
+                        <a href="{{asset('product/edit/'.$value->pID)}}" class="btn btn-primary edit"><span class="glyphicon glyphicon-edit"> </span> Detail</a>
 
                         <a href="{{asset('product/delete/'.$value->pID)}}" onclick="return confirm('Bạn có chắc muốn xóa?')" class="btn btn-danger"><span class="glyphicon glyphicon-trash"> </span>Delete</a>
 
@@ -42,6 +55,6 @@
 
 </table>
 <div class="d-flex justify-content-center">
-{{$products->links() }}
+      {{$products->links() }}
 </div>
 @endsection

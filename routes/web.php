@@ -58,10 +58,6 @@ Route::group(['prefix' =>'product'], function(){
     Route::get('create/',[ProductController::class,'getCreate'])->name('admin.product.create');
     
     Route::post('create/',[ProductController::class,'postCreate']);
-
-    Route::get('creates/{id}',[ProductController::class,'getAddCategories'])->name('admin.product.addCategories');
-    
-    Route::post('creates/{id}',[ProductController::class,'postAddCategories']);
     
     Route::get('edit/{id}',[ProductController::class,'getEditCate']);
     

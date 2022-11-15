@@ -1,7 +1,7 @@
 @extends('admin.blocks.index')
 @section('content')
 
-<form action="" method="post">
+<form action="" method="post" enctype="multipart/form-data">
   @csrf
   <div class="form-row">
     <div class="form-group col-md-6">
@@ -14,9 +14,9 @@
     </div>
   </div>
   <label for="formFileDisabled" class="form-label">Image 1</label>
-  <input class="form-control" type="file" id="formFileDisabled" name="pImage1" />
+  <input class="form-control" type="file"  id="formFileDisabled" name="pImage1" />
   <label for="formFileDisabled" class="form-label">Image 2</label>
-  <input class="form-control" type="file" id="formFileDisabled" name="pImage2" />
+  <input class="form-control" type="file"  id="formFileDisabled" name="pImage2" />
   <div class="form-row">
     <div class="form-group col-md-6">
       <label for="inputCity">Price</label>

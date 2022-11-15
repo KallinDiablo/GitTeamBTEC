@@ -15,16 +15,16 @@ return new class extends Migration
     {
         Schema::create('product', function (Blueprint $table) {
             $table->increments('pID');
-           $table->string('pName');
-           $table->string('pDescription');
-           $table->string('pImage1');
-           $table->string('pImage2');
-           $table->double('pPrice');
-           $table->integer('pQuantity');
-           $table->integer('cID');
-           $table->foreign('cID')->references('cID')->on('Country');
-           $table->timestamps('update_at');
-           $table->timestamps('create_at');
+            $table->string('pName');
+            $table->string('pDescription');
+            $table->string('pImage1');
+            $table->string('pImage2');
+            $table->double('pPrice');
+            $table->integer('pQuantity');
+            $table->integer('cID');
+            $table->foreign('cID')->references('cID')->on('Country');
+            $table->timestamps('update_at');
+            $table->timestamps('create_at');
         });
     }
 

@@ -114,9 +114,17 @@
 
     <!-- Nav Item - brand -->
     <li class="nav-item">
-        <a class="nav-link" href="">
-            <i class="fas fa-fw fa-table"></i>
-            <span>Brands</span></a>
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages5"
+            aria-expanded="true" aria-controls="collapsePages5">
+            <i class="fas fa-fw fa-folder"></i>
+            <span>Roles</span>
+        </a>
+        <div id="collapsePages5" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
+            <div class="bg-white py-2 collapse-inner rounded">
+                <h6 class="collapse-header">Login Screens:</h6>
+                <a class="collapse-item" href="{{route('admin.role.index')}}">Roles</a>
+            </div>
+        </div>
     </li>
 
     <!-- Nav Item - color -->

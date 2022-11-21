@@ -14,7 +14,7 @@ return new class extends Migration
     public function up()
     {
         Schema::create('district', function (Blueprint $table) {
-            $table->string('districtid');
+            $table->string('districtid')->primary();
             $table->string('name');
             $table->string('type');
             $table->string('location');

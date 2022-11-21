@@ -17,6 +17,7 @@ return new class extends Migration
             $table->increments('rID');
            $table->integer('uID');
            $table->string('rTotalPrice');
+           $table->int('status');
            $table->foreign('uID')->references('uID')->on('users');
            $table->timestamps('update_at');
            $table->timestamps('create_at');

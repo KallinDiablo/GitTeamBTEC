@@ -12,6 +12,10 @@ class District extends Model
     public $table ="district";
 
     public $primaryKey = 'districtid';
+
+    public $incrementing = false;
+
+    protected $keyType = 'string';
     
     public $fillable = [
     

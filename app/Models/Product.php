@@ -20,8 +20,12 @@ class Product extends Model
     public function Country(){
         return $this -> belongsTo('app\Models\Country');
     }
-    public function category(){
+    public function Category(){
         return $this->belongsToMany('App\Models\Category');
+
+    }
+    public function Detail(){
+        return $this->belongsToMany('App\Models\Detail');
 
     }
     const UPDATE_AT ='update_at';

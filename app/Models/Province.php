@@ -12,6 +12,10 @@ class Province extends Model
     public $table ="province";
 
     public $primaryKey = 'provinceid';
+
+    public $incrementing = false;
+
+    protected $keyType = 'string';
     
     public $fillable = [
     

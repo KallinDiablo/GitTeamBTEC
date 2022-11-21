@@ -18,11 +18,14 @@ class User extends Authenticatable
     
     public $fillable = [
     
-    'uName','uUsername','uPassword','uEmail','uImage','uPhoneNumber','roleId','pronvinceid','districid','wardid','number',
+    'uName','uUsername','uPassword','uEmail','uImage','uPhoneNumber','roleId','status','pronvinceid','districid','wardid','number','uMoney',
     
     ];
-    public function User(){
-        return $this -> belongsTo('app\Models\User');
+    public function Receipt(){
+        return $this -> belongsTo('app\Models\Receipt');
+    }
+    public function Role(){
+        return $this -> belongsTo('app\Models\Role');
     }
     public function Province(){
         return $this -> belongsTo('app\Models\Province');

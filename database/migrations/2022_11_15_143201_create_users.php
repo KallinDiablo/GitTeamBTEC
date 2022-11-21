@@ -22,9 +22,11 @@ return new class extends Migration
             $table->string('uImage');
             $table->string('uPhoneNumber');
             $table->integer('roleId');
+            $table->integer('status');
             $table->string('provinceid');
             $table->string('districid');
             $table->string('wardid');
+            $table->string('uMoney');
             $table->string('number'); //số nhà
             $table->foreign('roleId')->references('roleId')->on('roles');
             $table->foreign('provinceid')->references('provinceid')->on('province');

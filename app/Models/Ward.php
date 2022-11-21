@@ -12,6 +12,10 @@ class Ward extends Model
     public $table ="ward";
 
     public $primaryKey = 'wardid';
+
+    public $incrementing = false;
+
+    protected $keyType = 'string';
     
     public $fillable = [
     

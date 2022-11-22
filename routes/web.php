@@ -31,9 +31,12 @@ Route::post('register', [UserController::class, 'store'])->name('auth.register')
 
 Route::get('login', [UserController::class, 'showLogin'])->name('auth.login');
 Route::get('logout', [UserController::class, 'Logout'])->name('logout');
-Route::get('login', [UserController::class, 'login'])->name('auth.login');
+Route::post('login', [UserController::class, 'login']);
 
 Route::prefix('admin')->group(function () {
+    Route::get('', function () {
+        return view('admin.index');
+    });
     Route::group(['prefix' => 'category'], function () {
 
         Route::get('/', [CategoryController::class, 'index'])->name('admin.category.index');
@@ -83,5 +86,19 @@ Route::prefix('admin')->group(function () {
         Route::post('/', [ProductController::class, 'indexpostCreate']);
 
         Route::get('delete/{id}', [ProductController::class, 'delete']);
+    });
+    Route::group(['prefix' => 'user'], function () {
+
+        Route::get('/', [UserController::class, 'index'])->name('admin.user.index');
+
+        Route::get('create/', [UserController::class, 'getCreate'])->name('admin.user.create');
+
+        Route::post('create/', [UserController::class, 'postCreate']);
+
+        Route::get('edit/{id}', [UserController::class, 'getEditCate']);
+
+        Route::post('edit/{id}', [UserController::class, 'postEditCate']);
+
+        Route::get('delete/{id}', [UserController::class, 'delete']);
     });
 });

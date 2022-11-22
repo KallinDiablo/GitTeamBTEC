@@ -121,7 +121,6 @@ class ProductController extends Controller
                                     ->join('category_product','category.CategoryID','=','category_product.category_CategoryID')
                                     ->where('category_product.product_pID','=',$pID)
                                     ->get('category.CategoryName','category.CategoryID');
-                                    
         return view('admin.product.editProduct', $data, compact('countries', 'categories','productcategories'));
     }
 

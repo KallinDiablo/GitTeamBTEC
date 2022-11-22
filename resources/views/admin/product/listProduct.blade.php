@@ -43,9 +43,9 @@
                   </td>
                   <td>
 
-                        <a href="{{asset('product/edit/'.$value->pID)}}" class="btn btn-primary edit"><span class="glyphicon glyphicon-edit"> </span> Detail</a>
+                        <a href="{{asset('admin/product/edit/'.$value->pID)}}" class="btn btn-primary edit"><span class="glyphicon glyphicon-edit"> </span> Detail</a>
 
-                        <a href="{{asset('product/delete/'.$value->pID)}}" onclick="return confirm('Bạn có chắc muốn xóa?')" class="btn btn-danger"><span class="glyphicon glyphicon-trash"> </span>Delete</a>
+                        <a href="{{asset('admin/product/delete/'.$value->pID)}}" onclick="return confirm('Bạn có chắc muốn xóa?')" class="btn btn-danger"><span class="glyphicon glyphicon-trash"> </span>Delete</a>
 
                   </td>
 

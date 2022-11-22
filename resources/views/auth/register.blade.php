@@ -79,100 +79,94 @@
         <div class="row d-flex justify-content-center align-items-center h-100">
           <div class="col-12">
             <div class="card card-registration card-registration-2" style="border-radius: 15px;">
-              <div class="card-body p-0">
-                <div class="row g-0">
-                  <div class="col-lg-6">
-                    <div class="p-5">
-                      <h3 class="fw-normal mb-5" style="color: #4835d4;">General Infomation</h3>
-
-                      <div class="row">
-                        <div class="col-md-12 mb-8 pb-4">
-
-                          <div class="form-outline">
-                            <input type="text" id="form3Examplev2" class="form-control form-control-lg" name="fullname" />
-                            <label class="form-label" for="form3Examplev2">Fullname</label>
-                          </div>
-                        </div>
+              <div class="row g-0">
+                <div class="col-lg-6">
+                  <div class="p-5">
+                    <div class="mb-4 pb-2">
+                      <div class="form-outline">
+                        <input type="text" id="form3Examplev2" class="form-control form-control-lg" name="fullname" />
+                        <label class="form-label" for="form3Examplev2">Fullname</label>
                       </div>
-
-                      <div class="mb-4 pb-2">
-                        <div class="form-outline">
-                          <input type="text" id="form3Examplev4" class="form-control form-control-lg" name="username" />
-                          <label class="form-label" for="form3Examplev4">Username</label>
-                        </div>
-                      </div>
-                      <div class="mb-4 pb-2">
-                        <div class="form-outline">
-                          <input type="text" id="form3Examplev4" class="form-control form-control-lg" name="password" />
-                          <label class="form-label" for="form3Examplev4">Password</label>
-                        </div>
-                      </div>
-                      <div class="mb-4 pb-2">
-
-                        <input class="form-control" type="file" id="formFileDisabled" name="uImage" />
-                        <label class="form-label" for="form3Examplev4">Avatar</label>
-                      </div>
-
                     </div>
+
+                    <div class="mb-4 pb-2">
+                      <div class="form-outline">
+                        <input type="text" id="form3Examplev4" class="form-control form-control-lg" name="username" />
+                        <label class="form-label" for="form3Examplev4">Username</label>
+                      </div>
+                    </div>
+                    <div class="mb-4 pb-2">
+                      <div class="form-outline">
+                        <input type="text" id="form3Examplev4" class="form-control form-control-lg" name="password" />
+                        <label class="form-label" for="form3Examplev4">Password</label>
+                      </div>
+                    </div>
+                    <div class="mb-4 pb-2">
+
+                      <input class="form-control" type="file" id="formFileDisabled" name="uImage" />
+                      <label class="form-label" for="form3Examplev4">Avatar</label>
+                    </div>
+
                   </div>
-                  <div class="col-lg-6 bg-indigo text-white">
-                    <div class="p-5">
-                      <h3 class="fw-normal mb-5">Contact Details</h3>
-                      <div class="mb-4 pb-2">
-                        <div class="form-outline">
-                          <input type="text" id="form3Examplev4" class="form-control form-control-lg" name="email" />
-                          <label class="form-label" for="form3Examplev4">Email</label>
-                        </div>
+                </div>
+                <div class="col-lg-6 bg-indigo text-white">
+                  <div class="p-5">
+                    <h3 class="fw-normal mb-5">Contact Details</h3>
+                    <div class="mb-4 pb-2">
+                      <div class="form-outline">
+                        <input type="text" id="form3Examplev4" class="form-control form-control-lg" name="email" />
+                        <label class="form-label" for="form3Examplev4">Email</label>
                       </div>
-                      <div class="mb-4 pb-2">
-                        <div class="form-outline form-white">
-                          <input type="text" id="form3Examplea2" class="form-control form-control-lg" name="phonenumber" />
-                          <label class="form-label" for="form3Examplea2">Phone</label>
-                        </div>
+                    </div>
+                    <div class="mb-4 pb-2">
+                      <div class="form-outline form-white">
+                        <input type="text" id="form3Examplea2" class="form-control form-control-lg" name="phonenumber" />
+                        <label class="form-label" for="form3Examplea2">Phone</label>
                       </div>
-                      <div class="mb-4 pb-2">
-                        <div class="form-outline form-white">
+                    </div>
+                    <div class="mb-4 pb-2">
+                      <div class="form-outline form-white">
 
-                          <input type="text" id="form3Examplea2" class="form-control form-control-lg" name="number" />
-                          <label class="form-label" for="form3Examplea2">Apartment</label>
-                        </div>
+                        <input type="text" id="form3Examplea2" class="form-control form-control-lg" name="number" />
+                        <label class="form-label" for="form3Examplea2">Apartment</label>
                       </div>
+                    </div>
 
-                      <div class="mb-4 pb-2">
-                        <div class="form-outline form-white">
+                    <div class="mb-4 pb-2">
+                      <div class="form-outline form-white">
                         <label class="form-label" for="form3Examplea3">Address</label>
 
-                          <select id="province-dd" class="form-control" name="provinceid">
-                            @foreach($province as $data)
-                            <option value="{{$data->provinceid}}">{{$data->name}}</option>
-                            @endforeach
-                          </select>
-                          <br>
-                          <select id="district-dd" class="form-control" name="districtid">
-                          </select>
-                          <br>
-                          <select id="ward-dd" class="form-control" name="wardid">
-                          </select>
-                          <br>
+                        <select id="province-dd" class="form-control" name="provinceid">
+                          @foreach($province as $data)
+                          <option value="{{$data->provinceid}}">{{$data->name}}</option>
+                          @endforeach
+                        </select>
+                        <br>
+                        <select id="district-dd" class="form-control" name="districtid">
+                        </select>
+                        <br>
+                        <select id="ward-dd" class="form-control" name="wardid">
+                        </select>
+                        <br>
 
-                        </div>
                       </div>
-
-                      <br>
-                      <br>
-                      <br>
-                      <br>
-                      <br>
-
-
-
-                      <button type="submit" class="btn btn-light btn-lg" data-mdb-ripple-color="dark">Register</button>
-
                     </div>
+
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+
+
+
+                    <button type="submit" class="btn btn-light btn-lg" data-mdb-ripple-color="dark">Register</button>
+
                   </div>
                 </div>
               </div>
             </div>
+
           </div>
         </div>
       </div>
@@ -196,7 +190,7 @@
             // $('#district-dd').html('<option value="">Select District</option>');
             $.each(result.district, function(key, value) {
               $("#district-dd").append('<option value="' + value
-                .districtid + '">' + value.type+" "+value.name + '</option>');
+                .districtid + '">' + value.type + " " + value.name + '</option>');
             });
             // $('#ward-dd').html('<option value="">Select Ward</option>');
           }
@@ -217,7 +211,7 @@
             // $('#ward-dd').html('<option value="">Select Ward</option>');
             $.each(res.ward, function(key, value) {
               $("#ward-dd").append('<option value="' + value
-                .wardid + '">' +value.type+" "+ value.name + '</option>');
+                .wardid + '">' + value.type + " " + value.name + '</option>');
             });
           }
         });

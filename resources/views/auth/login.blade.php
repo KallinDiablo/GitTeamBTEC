@@ -15,19 +15,8 @@
 </head>
 
 <body>
-  @if (count($errors) >0)
-  <ul>
-    @foreach($errors->all() as $error)
-    <li class="text-danger"> {{ $error }}</li>
-    @endforeach
-  </ul>
-  @endif
-  @if (session('status'))
-  <ul>
-    <li class="text-danger"> {{ session('status') }}</li>
-  </ul>
-  @endif
-  <form action="{{ route('getLogin') }}" method="post">
+ 
+  <form action="" method="post">
     @csrf
     <section class="vh-100" style="background-color: #508bfc;">
       <div class="container py-5 h-100">
@@ -39,12 +28,12 @@
                 <h3 class="mb-5">Sign in</h3>
 
                 <div class="form-outline mb-4">
-                  <input type="text" id="typeEmailX-2" class="form-control form-control-lg" name="txtUsername" />
+                  <input type="text" id="typeEmailX-2" class="form-control form-control-lg" name="username" />
                   <label class="form-label" for="typeEmailX-2">Username</label>
                 </div>
 
                 <div class="form-outline mb-4">
-                  <input type="password" id="typePasswordX-2" class="form-control form-control-lg" name="txtPassword" />
+                  <input type="password" id="typePasswordX-2" class="form-control form-control-lg" name="password" />
                   <label class="form-label" for="typePasswordX-2">Password</label>
                 </div>
 

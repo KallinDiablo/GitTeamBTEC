@@ -31,9 +31,9 @@
         
         <td>
         
-        <a href="{{asset('category/edit/'.$value->CategoryID)}}" class="btn btn-primary edit"><span class="glyphicon glyphicon-edit"> </span> Edit</a>
+        <a href="{{asset('admin/category/edit/'.$value->CategoryID)}}" class="btn btn-primary edit"><span class="glyphicon glyphicon-edit"> </span> Edit</a>
         
-        <a href="{{asset('category/delete/'.$value->CategoryID)}}" onclick="return confirm('Bạn có chắc muốn xóa?')" class="btn btn-danger"><span class="glyphicon glyphicon-trash"> </span>Delete</a>
+        <a href="{{asset('admin/category/delete/'.$value->CategoryID)}}" onclick="return confirm('Bạn có chắc muốn xóa?')" class="btn btn-danger"><span class="glyphicon glyphicon-trash"> </span>Delete</a>
         
         </td>
         

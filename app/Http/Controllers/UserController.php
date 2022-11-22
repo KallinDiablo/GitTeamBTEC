@@ -54,20 +54,14 @@ class UserController extends Controller
     public function login(Request $request)
     {
         $validator = Validator::make($request->all(), [
-            'username' => 'required',
-            'password' => 'required',
+            'uUsername' => 'required',
+            'uPassword' => 'required',
         ]);
-        if ($validator->fails()) {
-            return redirect()->back()
-                ->withErrors($validator)
-                ->withInput();
-        }
-        $remember = $request->remember;
-        if (Auth::attempt(['username' => $request->username, 'password' => $request->password], $remember)) {
+        if (Auth::attempt(['uUsername' => $request->username, 'uPassword' => $request->password])) {
             if (Auth::user()->role == 2) {
                 return view('home');
             } else {
-                return view('admin');
+                return view('admin.index');
             }
         }
     }
@@ -85,12 +79,6 @@ class UserController extends Controller
                 'uPhoneNumber' => 'required|max:11|min:10',
             ]
         );
-        if ($validator)
-            if ($validator->fails()) {
-                return redirect()->back()
-                    ->withErrors($validator)
-                    ->withInput();
-            }
         $newUser = new User;
         $newUser->uName = $request->fullname;
         $newUser->uEmail = $request->email;
@@ -102,8 +90,8 @@ class UserController extends Controller
         if ($request->hasFile('uImage')) {
             $file = $request->uImage;
             $ext = $file->extension();
-            $filename = $name . '_' . $username . '_' . '.' . $ext;
-            $file->move(public_path('storage\users'), $filename);
+            $fileName = $name . '_' . $username . '_' . '.' . $ext;
+            $file->move(public_path('storage\users'), $fileName);
         } else {
             $fileName = 'default-avatar-user.jpg'; //ảnh default 612x612
         }
@@ -112,7 +100,7 @@ class UserController extends Controller
         $default_Money = 0;
         $default_Role = 2;
         $newUser->roleid = $default_Role;
-        $newUser->wardid = $request->number;
+        $newUser->number = $request->number;
 
         //set address complex
         $newUser->provinceid = $request->provinceid;
@@ -122,8 +110,6 @@ class UserController extends Controller
         $newUser->status = $default_status;
         $newUser->uMoney = $default_Money;
         $newUser->save();
-        dd($newUser);
-        die();
         return redirect()->route('auth.login')->with('message', 'Create success!');
     }
     public function logout()
@@ -132,4 +118,140 @@ class UserController extends Controller
 
         return redirect()->route('auth.login');
     }
+    // 
+    // 
+    // 
+    // 
+    // 
+    // 
+    //CRUD
+    public function index()
+    {
+        $users = User::paginate(10);
+        return view('admin.user.listUser', compact('users'));
+    }
+    public function getCreate()
+
+    {
+
+        $roles = Role::all();
+        $data['province'] = Province::get();
+
+        return view('admin.user.CreateUser', compact("roles"), $data);
+    }
+
+    //Hàm store để thêm dữ liệu
+
+    public function postCreate(Request $request)    
+
+    {
+        $newUser = new User;
+        $newUser->uName = $request->fullname;
+        $newUser->uEmail = $request->email;
+        $newUser->uUsername = $request->username;
+        $newUser->uPassword = $request->password;
+        $newUser->uPhoneNumber = $request->phonenumber;
+        $name = $request->fullname;
+        $username = $request->username;
+        if ($request->hasFile('uImage')) {
+            $file = $request->uImage;
+            $ext = $file->extension();
+            $fileName = $name . '_' . $username . '_' . '.' . $ext;
+            $file->move(public_path('storage\users'), $fileName);
+        } else {
+            $fileName = 'default-avatar-user.jpg'; //ảnh default 612x612
+        }
+        $newUser->uImage = $fileName;
+        $default_status = 1;
+        $default_Money = 0;
+        $default_Role = 2;
+        $newUser->roleid = $default_Role;
+        $newUser->number = $request->number;
+
+        //set address complex
+        $newUser->provinceid = $request->provinceid;
+        $newUser->districtid = $request->districtid;
+        $newUser->wardid = $request->wardid;
+        //
+        $newUser->status = $default_status;
+        $newUser->uMoney = $default_Money;
+        $newUser->save();
+        // Thực thi insert vào ProductCategory
+        // Redirect vào list product
+
+        return redirect()->route('admin.user.index')->with('status', 'User created successfully.');
+    }
+
+
+
+    public function getEditCate($pID)
+
+    {
+
+        $data['cate'] = User::find($pID);
+
+        $data['province'] = Province::get();
+
+        return view('admin.user.editUser', $data);
+    }
+
+    public function postEditCate(Request $request, $pID)
+
+    {
+
+
+        
+
+        $newUser=User::find($pID);
+        $newUser->uName = $request->fullname;
+        $newUser->uEmail = $request->email;
+        $newUser->uUsername = $request->username;
+        $newUser->uPassword = $request->password;
+        $newUser->uPhoneNumber = $request->phonenumber;
+        $name = $request->fullname;
+        $username = $request->username;
+        if ($request->hasFile('uImage')) {
+            $file = $request->uImage;
+            $ext = $file->extension();
+            $fileName = $name . '_' . $username . '_' . '.' . $ext;
+            $file->move(public_path('storage\users'), $fileName);
+        } else {
+            $fileName = 'default-avatar-user.jpg'; //ảnh default 612x612
+        }
+        $newUser->uImage = $fileName;
+        $default_status = 1;
+        $default_Money = 0;
+        $default_Role = 2;
+        $newUser->roleid = $default_Role;
+        $newUser->number = $request->number;
+
+        //set address complex
+        $newUser->provinceid = $request->provinceid;
+        $newUser->districtid = $request->districtid;
+        $newUser->wardid = $request->wardid;
+        //
+        $newUser->status = $default_status;
+        $newUser->uMoney = $default_Money;
+        $newUser->save();
+
+
+        return redirect()->route('admin.country.index');
+    }
+
+    // public function delete($id)
+
+    // {
+
+    //     $products = Product::find($id);
+    //     $productcategories = ProductCategory::where('product_pID', $id);
+    //     $productcategories->delete();
+
+    //     $image1 = $products->pImage1;
+    //     $image2 = $products->pImage2;
+    //     $path = public_path('storage\products/');
+    //     unlink($path . $image1);
+    //     unlink($path . $image2);
+    //     $products->delete();
+    //     return back();
+    // }
 }

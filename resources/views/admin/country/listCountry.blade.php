@@ -28,9 +28,9 @@
         
         <td>
         
-        <a href="{{asset('country/edit/'.$value->cID)}}" class="btn btn-primary edit"><span class="glyphicon glyphicon-edit"> </span> Edit</a>
+        <a href="{{asset('admin/country/edit/'.$value->cID)}}" class="btn btn-primary edit"><span class="glyphicon glyphicon-edit"> </span> Edit</a>
         
-        <a href="{{asset('country/delete/'.$value->cID)}}" onclick="return confirm('Bạn có chắc muốn xóa?')" class="btn btn-danger"><span class="glyphicon glyphicon-trash"> </span>Delete</a>
+        <a href="{{asset('admin/country/delete/'.$value->cID)}}" onclick="return confirm('Bạn có chắc muốn xóa?')" class="btn btn-danger"><span class="glyphicon glyphicon-trash"> </span>Delete</a>
         
         </td>
         

@@ -54,15 +54,20 @@ class UserController extends Controller
     public function login(Request $request)
     {
         $validator = Validator::make($request->all(), [
-            'uUsername' => 'required',
-            'uPassword' => 'required',
+            'username' => 'required',
+            'password' => 'required',
         ]);
-        if (Auth::attempt(['uUsername' => $request->username, 'uPassword' => $request->password])) {
-            if (Auth::user()->role == 2) {
-                return view('home');
-            } else {
-                return view('admin.index');
-            }
+        $uUsername['info'] = $request->uUsername;
+        $uPassword = $request->uPassword;
+        $result = User::where('uUsername',$uUsername,'=','and','uPassword','=',$uPassword)->first();
+        // $result = DB::table('users')->WHERE('uUsername', $uUsername)->get()->toArray();
+
+        if($result == null){
+            echo "<h1>Incorrect </h1>";
+        }elseif($result != null && $result->roleId==2){
+            return view('welcome');
+        }elseif($result != null && $result->roleId==1){
+            return view('admin.index');
         }
     }
     public function store(Request $request)

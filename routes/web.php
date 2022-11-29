@@ -26,7 +26,7 @@ Route::post('api/fetch-wards', [UserController::class, 'fetchWard']);
 
 //
 
-Route::post('register', [UserController::class, 'store'])->name('auth.register');
+Route::post('register', [UserController::class, 'store'])->name('welcome.register');
 
 
 Route::get('login', [UserController::class, 'showLogin'])->name('auth.login');

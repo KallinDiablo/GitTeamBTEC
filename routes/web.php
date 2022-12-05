@@ -19,7 +19,7 @@ use App\Http\Controllers\UserController;
 */
 
 //địa chỉ
-Route::get('register', [UserController::class, 'show']);
+Route::get('register', [UserController::class, 'show'])->name('auth.register');
 Route::post('api/fetch-districts', [UserController::class, 'fetchDistrict']);
 Route::post('api/fetch-wards', [UserController::class, 'fetchWard']);
 
@@ -29,9 +29,9 @@ Route::post('api/fetch-wards', [UserController::class, 'fetchWard']);
 Route::post('register', [UserController::class, 'store'])->name('welcome.register');
 
 
-Route::get('login', [UserController::class, 'showLogin'])->name('auth.login');
+Route::get('', [UserController::class, 'showLogin'])->name('auth.login');
 Route::get('logout', [UserController::class, 'Logout'])->name('logout');
-Route::post('login', [UserController::class, 'login']);
+Route::post('', [UserController::class, 'login']);
 
 Route::prefix('admin')->group(function () {
     Route::get('', function () {
@@ -106,4 +106,4 @@ Route::prefix('admin')->group(function () {
 use App\Http\Controllers\indexController;
 
 Route::get('home',[indexController::class,'index'])->name('home');  
-Route::get('home/product-detail/{id}',[indexController::class,'detail'])->name('home/product-detail');  
+Route::get('product-detail/{id}',[indexController::class,'detail'])->name('home/product-detail');  

@@ -49,7 +49,7 @@
                 <button class="btn btn-primary btn-lg btn-block" type="submit">Login</button>
 
                 <hr class="my-4">
-
+                <a href="{{ route('auth.register')}}" class="btn btn-primary btn-lg btn-block">Register</a>
               </div>
             </div>
           </div>

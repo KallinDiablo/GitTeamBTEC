@@ -70,7 +70,6 @@
 </head>
 
 <body>
-<h1>Nguyễn Hoàng Đức</h1>
   <form action="" method="post" enctype="multipart/form-data">
     @csrf
 

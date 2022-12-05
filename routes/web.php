@@ -102,3 +102,8 @@ Route::prefix('admin')->group(function () {
         Route::get('delete/{id}', [UserController::class, 'delete']);
     });
 });
+
+use App\Http\Controllers\indexController;
+
+Route::get('home',[indexController::class,'index'])->name('home');  
+Route::get('home/product-detail/{id}',[indexController::class,'detail'])->name('home/product-detail');  

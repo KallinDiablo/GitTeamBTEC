@@ -46,7 +46,7 @@
 								  </div>
 								<span>3 Reviews</span>
 							</div>
-		        			<div class="product-price-discount"><span>{{$product_id -> pPrice}}</span><span style="padding-left:10px" > SL : {{$product_id -> pQuantity}}</span></div>
+		        			<div class="product-price-discount"><span>Price:{{$product_id -> pPrice}}</span><p style="padding-left:10px" > Quantity : {{$product_id -> pQuantity}}</p></div>
 		        		</div>
 	        			<p>{{$product_id -> pDescription}}</p>
 	        			<div class="row">

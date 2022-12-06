@@ -12,3 +12,4 @@ class SlideController extends Controller
         return view('fontend.index', compact("slide"));
     }
 }
+

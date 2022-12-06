@@ -106,4 +106,4 @@ Route::prefix('admin')->group(function () {
 use App\Http\Controllers\indexController;
 
 Route::get('home',[indexController::class,'index'])->name('home');  
-Route::get('home/product-detail/{id}',[indexController::class,'detail'])->name('home/product-detail');  
+Route::get('home/product-detail/{id}',[indexController::class,'detail'])->name('detail');  

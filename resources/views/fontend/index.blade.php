@@ -27,7 +27,7 @@
     <div class="carousel-item">
       <img src="ny.jpg" alt="New York" class="d-block" style="width:100%">
       <div class="carousel-caption">
-        <h2>f</h2>
+        <h2>a</h2>
         
       </div>  
     </div>
